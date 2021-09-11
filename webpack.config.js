@@ -12,6 +12,7 @@ module.exports = {
   },
   devServer: {
     // contentBase: './',
+    static: './src/assets',
     port: 9000,
   },
   module: {
@@ -28,6 +29,11 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         loader: 'source-map-loader',
+      },
+      {
+        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+        use: 'url-loader?limit=100000',
+        type: 'asset/resource',
       },
     ],
   },
