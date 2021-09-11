@@ -3,9 +3,10 @@ import { Link as LinkRouter } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 
 export const Nav = styled.nav`
-  background: #000;
+  /* background: #000; */
+  background: transparent;
   height: 80px;
-  // margin-top: -80px;
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,7 +84,7 @@ export const NavLinks = styled(LinkScroll)`
   cursor: pointer;
 
   &.active {
-    border-bottom: 3px solid #01bf71;
+    border-bottom: 3px solid #d5962a;
   }
 `;
 
@@ -98,10 +99,10 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(LinkRouter)`
   border-radius: 50px;
-  background: #01bf71;
+  background: #d5962a;
   white-space: nowrap;
   padding: 10px 22px;
-  color: #010606;
+  color: #d5962a;
   font-size: 16px;
   outline: none;
   border: none;

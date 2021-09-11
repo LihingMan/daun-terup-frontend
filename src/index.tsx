@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Landing from './Landing';
+import './App.css';
 
 function App() {
   return (

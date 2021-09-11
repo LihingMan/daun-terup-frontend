@@ -11,8 +11,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   devServer: {
-    // contentBase: './',
-    static: './src/assets',
+    static: {
+      directory: path.join(__dirname, 'assets'),
+    },
     port: 9000,
   },
   module: {
@@ -32,7 +33,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-        use: 'url-loader?limit=100000',
+        // use: 'url-loader?limit=100000',
         type: 'asset/resource',
       },
     ],
