@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({ $primary, $dark }) => {
         <HeroH1>Deez Nuts</HeroH1>
         <HeroP>Deez nuts haha xD</HeroP>
         <HeroBtnWrapper>
-          <Button to="games" onMouseEnter={onHover} onMouseLeave={onHover} $primary={true} $dark={true}>
+          <Button to="about" onMouseEnter={onHover} onMouseLeave={onHover} $primary={true} $dark={true}>
             Get started {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtnWrapper>

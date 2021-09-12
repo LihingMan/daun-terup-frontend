@@ -1,6 +1,13 @@
 ## Installation
 
-Built with React. webpack is used a module bundler. styled-components for styling purposes. 
+Built with React. webpack is used a module bundler. styled-components for styling purposes.
+
+### Good to have VS Code extensions
+
+- dsznajder.es7-react-js-snippets (ES7)
+- eslint (ESLint)
+- esbenp.prettier-vscode (Prettier - code formatter)
+- vscode-styled-components (VS Code extension for styled-components)
 
 ## Available Scripts
 
@@ -17,4 +24,3 @@ You will also see any lint errors in the console. (i think)
 ### `yarn build-dev`
 
 Builds the app for production to the `build` folder.\
-
