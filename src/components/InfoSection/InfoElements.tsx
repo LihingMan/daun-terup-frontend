@@ -20,15 +20,15 @@ export const InfoContainer = styled.div<IInfoContainerStyle>`
   color: #fff;
   background: ${({ $lightBg }) => ($lightBg ? '#f9f9f9' : '#010606')};
 
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     padding: 100px 0;
-  }
+  } */
 `;
 
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
+  height: 100vh;
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
@@ -41,6 +41,7 @@ export const InfoRow = styled.div<IInfoRowStyle>`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
+  height: 100vh;
   grid-template-areas: ${({ $imgStart }) => ($imgStart ? `'col2 col1'` : `'col1 col2'`)};
 
   @media screen and (max-width: 768px) {
@@ -63,7 +64,7 @@ export const Column2 = styled.div`
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
 `;
 
 export const TopLine = styled.p`
