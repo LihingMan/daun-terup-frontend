@@ -4,7 +4,9 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import Hero from '../components/Hero';
 import InfoSection from '../components/InfoSection';
-import { firstHomeObj } from '../components/InfoSection/data';
+import { firstHomeObj, secondHomeObj } from '../components/InfoSection/data';
+import GameSection from '../components/GameSection';
+import Footer from '../components/Footer';
 
 const Landing = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +21,8 @@ const Landing = () => {
       <Navbar toggle={toggle} />
       <Hero />
       <InfoSection {...firstHomeObj} />
+      <GameSection />
+      <Footer />
     </>
   );
 };

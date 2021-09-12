@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import { ArrowRightOutlined, RightOutlined } from '@ant-design/icons';
 
 interface IButtonStyle {
   $primary?: boolean;
@@ -27,4 +28,16 @@ export const Button = styled(Link)<IButtonStyle>`
     transition: all 0.2s ease-in-out;
     background: ${({ $primary }) => ($primary ? '#fff' : '#01bf71')};
   }
+`;
+
+export const ArrowForward = styled(ArrowRightOutlined)`
+  margin-top: 2px;
+  margin-left: 13px;
+  font-size: 13px;
+`;
+
+export const ArrowRight = styled(RightOutlined)`
+  margin-top: 2px;
+  margin-left: 13px;
+  font-size: 13px;
 `;

@@ -28,7 +28,7 @@ export const ImageBg = styled.img`
   -o-object-fit: cover;
   object-fit: cover;
   background: #232a34;
-  opacity: 0.5;
+  opacity: 0.3;
 `;
 
 export const HeroContent = styled.div`
@@ -58,11 +58,11 @@ export const HeroH1 = styled.h1`
 
 export const HeroP = styled.p`
   margin-top: 24px;
-  /* color: #d5962a; */
   color: #fff;
   font-size: 24px;
   text-align: center;
   max-width: 600px;
+  font-weight: 400;
 
   @media screen and (max-width: 768px) {
     font-size: 24px;
@@ -78,16 +78,4 @@ export const HeroBtnWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const ArrowForward = styled(ArrowRightOutlined)`
-  margin-top: 2px;
-  margin-left: 13px;
-  font-size: 13px;
-`;
-
-export const ArrowRight = styled(RightOutlined)`
-  margin-top: 2px;
-  margin-left: 13px;
-  font-size: 13px;
 `;

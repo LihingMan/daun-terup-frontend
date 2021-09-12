@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from '../ButtonElement';
+import React, { useState } from 'react';
+import { Button, ArrowForward, ArrowRight } from '../ButtonElement';
 import {
   InfoContainer,
   InfoWrapper,
@@ -32,6 +32,12 @@ const InfoSection: React.FC<IInfoSectionObj> = ({
   primary,
   darkText,
 }) => {
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  };
+
   return (
     <InfoContainer $lightBg={lightBg} id={id}>
       <InfoWrapper>
@@ -42,8 +48,17 @@ const InfoSection: React.FC<IInfoSectionObj> = ({
               <Heading $lightText={lightText}>{headline}</Heading>
               <Subtitle $darkText={darkText}>{description}</Subtitle>
               <BtnWrap>
-                <Button to="home" smooth={true} duration={500} spy={true} offset={-80} $dark={dark} $primary={primary}>
-                  {buttonLabel}
+                <Button
+                  to="games"
+                  smooth={true}
+                  onMouseEnter={onHover}
+                  onMouseLeave={onHover}
+                  duration={300}
+                  spy={true}
+                  $dark={dark}
+                  $primary={primary}
+                >
+                  {buttonLabel} {hover ? <ArrowForward /> : <ArrowRight />}
                 </Button>
               </BtnWrap>
             </TextWrapper>

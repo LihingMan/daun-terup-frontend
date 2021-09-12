@@ -12,22 +12,37 @@ import {
   NavBtnLink,
 } from './NavbarElements';
 import { MenuOutlined } from '@ant-design/icons';
+import { animateScroll as scroll } from 'react-scroll';
 
-const Navbar = ({ toggle }: any) => {
+interface NavbarProps {
+  toggle: any;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
+  const toggleHome = () => {
+    scroll.scrollToTop({ duration: 300 });
+  };
+
   return (
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">daun-terup</NavLogo>
+          <NavLogo to="/" onClick={toggleHome}>
+            daun-terup
+          </NavLogo>
           <MobileIcon onClick={toggle}>
             <MenuOutlined />
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">About</NavLinks>
+              <NavLinks to="about" smooth={true} duration={300} spy={true}>
+                About
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="games">Games</NavLinks>
+              <NavLinks to="games" smooth={true} duration={300} spy={true}>
+                Games
+              </NavLinks>
             </NavItem>
           </NavMenu>
           {/* <NavBtn>

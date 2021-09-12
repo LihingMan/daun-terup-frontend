@@ -1,26 +1,9 @@
 import React, { useState } from 'react';
-import {
-  HeroContainer,
-  HeroBg,
-  ImageBg,
-  HeroContent,
-  HeroH1,
-  HeroP,
-  HeroBtnWrapper,
-  ArrowForward,
-  ArrowRight,
-} from './HeroElements';
+import { HeroContainer, HeroBg, ImageBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper } from './HeroElements';
 import Image from '../../../assets/landing/cards2.jpg';
-import { Button } from '../ButtonElement';
+import { Button, ArrowForward, ArrowRight } from '../ButtonElement';
 
-type HeroProps = {
-  $primary?: boolean;
-  $dark?: boolean;
-  fontBig?: boolean;
-  big?: boolean;
-};
-
-const Hero: React.FC<HeroProps> = ({ $primary, $dark }) => {
+const Hero: React.FC = () => {
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
@@ -33,10 +16,19 @@ const Hero: React.FC<HeroProps> = ({ $primary, $dark }) => {
         <ImageBg src={Image}></ImageBg>
       </HeroBg>
       <HeroContent>
-        <HeroH1>Deez Nuts</HeroH1>
-        <HeroP>Deez nuts haha xD</HeroP>
+        <HeroH1>Daun Terup</HeroH1>
+        <HeroP>Multiplayer card game platform</HeroP>
         <HeroBtnWrapper>
-          <Button to="about" onMouseEnter={onHover} onMouseLeave={onHover} $primary={true} $dark={true}>
+          <Button
+            to="about"
+            smooth={true}
+            duration={300}
+            spy={true}
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
+            $primary={true}
+            $dark={true}
+          >
             Get started {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtnWrapper>
