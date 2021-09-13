@@ -1,15 +1,19 @@
 import React, { useEffect, lazy, Suspense, useState } from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from './Landing';
 import './App.css';
+import CreateGame from './CreateGame';
 
 function App() {
   return (
-    <Router>
-      <Landing />
-    </Router>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Landing} exact />
+        <Route path="/create-game/:game" component={CreateGame} exact />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

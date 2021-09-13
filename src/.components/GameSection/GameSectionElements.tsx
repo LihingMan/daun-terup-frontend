@@ -80,4 +80,5 @@ export const GameSectionH2 = styled.h1`
 export const GameSectionP = styled.p`
   font-size: 1rem;
   text-align: center;
+  color: #000;
 `;
