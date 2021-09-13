@@ -6,14 +6,17 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'assets'),
-    },
+    // static: {
+    //   directory: path.join(__dirname, 'assets'),
+    // },
+    static: './',
+    historyApiFallback: true,
     port: 9000,
   },
   module: {

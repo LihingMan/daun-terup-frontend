@@ -9,14 +9,24 @@ type RouteParamsProps = {
 const CreateGame = () => {
   let { game } = useParams<RouteParamsProps>();
   if (game === GameTypes.BLACKJACK) {
-    console.log(game);
+    return (
+      <div>
+        <h1>Blackjack page</h1>
+      </div>
+    );
+  } else if (game === GameTypes.POKER) {
+    return (
+      <div>
+        <h1>Poker page</h1>
+      </div>
+    );
+  } else if (game === GameTypes.NINE) {
+    return (
+      <div>
+        <h1>9Dian page</h1>
+      </div>
+    );
   }
-
-  return (
-    <div>
-      <h1>Blackjack page</h1>
-    </div>
-  );
 };
 
 export default CreateGame;

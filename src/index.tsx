@@ -3,17 +3,21 @@ import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from './Landing';
-import './App.css';
+// import './App.css';
 import CreateGame from './CreateGame';
+import GlobalStyles from '../styles/globalStyles';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" component={Landing} exact />
-        <Route path="/create-game/:game" component={CreateGame} exact />
-      </Switch>
-    </BrowserRouter>
+    <>
+      <GlobalStyles />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Landing} exact />
+          <Route path="/create-game/:game" component={CreateGame} exact />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 
