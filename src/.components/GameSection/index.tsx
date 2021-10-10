@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   GameSectionContainer,
   GameSectionH1,
@@ -7,16 +7,13 @@ import {
   GameSectionIcon,
   GameSectionH2,
   GameSectionP,
-} from './GameSectionElements';
-import { Link } from 'react-router-dom';
-import { GameTypes } from '../../../types/game-types';
-import Icon1 from '../../../assets/landing/playingcards.svg';
-import Icon2 from '../../../assets/landing/playingcards.svg';
-import Icon3 from '../../../assets/landing/playingcards.svg';
+} from "./GameSectionElements";
+import { Link } from "react-router-dom";
+import { GameTypes } from "../../types/game-types";
 
 const GameSection = () => {
   return (
-    <GameSectionContainer id={'games'}>
+    <GameSectionContainer id={"games"}>
       <GameSectionH1>Games</GameSectionH1>
       <GameSectionWrapper>
         <Link to={`create-game/${GameTypes.BLACKJACK}`}>

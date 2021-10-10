@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, ArrowForward, ArrowRight } from '../ButtonElement';
+import React, { useState } from "react";
+import { Button, ArrowForward, ArrowRight } from "../ButtonElement";
 import {
   InfoContainer,
   InfoWrapper,
@@ -13,8 +13,8 @@ import {
   BtnWrap,
   ImgWrap,
   Img,
-} from './InfoElements';
-import { IInfoSectionObj } from './data';
+} from "./InfoElements";
+import { IInfoSectionObj } from "./data";
 
 const InfoSection: React.FC<IInfoSectionObj> = ({
   id,

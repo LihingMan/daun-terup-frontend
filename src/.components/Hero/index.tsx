@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
-import { HeroContainer, HeroBg, ImageBg, HeroContent, HeroH1, HeroP, HeroBtnWrapper } from './HeroElements';
-import Image from '../../../assets/landing/cards2.jpg';
-import { Button, ArrowForward, ArrowRight } from '../ButtonElement';
+import React, { useState } from "react";
+import {
+  HeroContainer,
+  HeroBg,
+  ImageBg,
+  HeroContent,
+  HeroH1,
+  HeroP,
+  HeroBtnWrapper,
+} from "./HeroElements";
+import Image from "../../../assets/landing/cards2.jpg";
+import { Button, ArrowForward, ArrowRight } from "../ButtonElement";
 
 const Hero: React.FC = () => {
   const [hover, setHover] = useState(false);

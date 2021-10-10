@@ -1,6 +1,6 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { GameTypes } from '../../types/game-types';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { GameTypes } from "src/types/game-types";
 import {
   Container,
   FormContent,
@@ -11,7 +11,13 @@ import {
   FormLabel,
   FormButton,
   FormInput,
-} from './CreateGameElements';
+} from "./CreateGameElements";
+import axios from "axios";
+import * as rax from "retry-axios";
+import ServerConfig from "../config/server.config";
+
+const retriableAxios = axios.create();
+rax.attach(retriableAxios);
 
 type RouteParamsProps = {
   game: string;
@@ -19,6 +25,15 @@ type RouteParamsProps = {
 
 const CreateGame = () => {
   let { game } = useParams<RouteParamsProps>();
+
+  const createGame = async (nickname: string) => {
+    const payload = { nickname: nickname };
+    retriableAxios
+      .post(`${ServerConfig.getBackendUrl}/create-game`, payload)
+      .then(async (res) => {
+        console.log(res);
+      });
+  };
 
   return (
     <>
@@ -37,25 +52,6 @@ const CreateGame = () => {
       </Container>
     </>
   );
-  // if (game === GameTypes.BLACKJACK) {
-  //   return (
-  //     <div>
-  //       <h1>Blackjack page</h1>
-  //     </div>
-  //   );
-  // } else if (game === GameTypes.POKER) {
-  //   return (
-  //     <div>
-  //       <h1>Poker page</h1>
-  //     </div>
-  //   );
-  // } else if (game === GameTypes.NINE) {
-  //   return (
-  //     <div>
-  //       <h1>9Dian page</h1>
-  //     </div>
-  //   );
-  // }
 };
 
 export default CreateGame;

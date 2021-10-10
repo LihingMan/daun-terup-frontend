@@ -1,21 +1,21 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: "./src/index.tsx",
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'main.js',
-    publicPath: '/',
+    path: path.resolve(__dirname, "build"),
+    filename: "main.js",
+    publicPath: "/",
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
   },
   devServer: {
     // static: {
     //   directory: path.join(__dirname, 'assets'),
     // },
-    static: './',
+    static: "./",
     historyApiFallback: true,
     port: 9000,
   },
@@ -23,27 +23,27 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        loader: 'ts-loader',
+        loader: "ts-loader",
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
-        enforce: 'pre',
+        enforce: "pre",
         test: /\.js$/,
-        loader: 'source-map-loader',
+        loader: "source-map-loader",
       },
       {
         test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
         // use: 'url-loader?limit=100000',
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html'),
+      template: path.resolve(__dirname, "index.html"),
     }),
   ],
 };
