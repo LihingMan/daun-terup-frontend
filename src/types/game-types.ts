@@ -1,5 +1,5 @@
 export enum GameTypes {
-  BLACKJACK = 'blackjack',
-  POKER = 'poker',
-  NINE = '9dian',
+  BLACKJACK = "blackjack",
+  POKER = "poker",
+  DAIDI = "daidi",
 }

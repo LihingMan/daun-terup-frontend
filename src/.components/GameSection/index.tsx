@@ -32,7 +32,7 @@ const GameSection = () => {
           </GameSectionCard>
         </Link>
 
-        <Link to={`create-game/${GameTypes.NINE}`}>
+        <Link to={`create-game/${GameTypes.DAIDI}`}>
           <GameSectionCard>
             {/* <GameSectionIcon src={Icon3} /> */}
             <GameSectionH2>9Dian</GameSectionH2>

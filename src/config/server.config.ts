@@ -19,7 +19,7 @@ namespace ServerConfig {
     if (isProduction()) {
       return "https://my-prod-url";
     } else if (isDevelopment()) {
-      return "https://my-dev-url";
+      return "http://localhost:16900";
     }
     return "http://localhost:16900";
   }
