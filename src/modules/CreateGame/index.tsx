@@ -15,7 +15,7 @@ import {
 } from "./CreateGameElements";
 import axios from "axios";
 import * as rax from "retry-axios";
-import ServerConfig from "../config/server.config";
+import ServerConfig from "../../config/server.config";
 import io from "socket.io-client";
 
 const socket = io(`${ServerConfig.getBackendUrl()}/games`);
