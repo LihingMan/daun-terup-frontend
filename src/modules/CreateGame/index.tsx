@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
-import { GameTypes } from "src/types/game-types";
 import {
   Container,
   FormContent,
@@ -14,49 +13,45 @@ import {
   FormInput,
 } from "./CreateGameElements";
 import axios from "axios";
-import * as rax from "retry-axios";
 import ServerConfig from "../../config/server.config";
-import io from "socket.io-client";
+import {
+  CreateGamePayload,
+  CreateGameResponse,
+} from "../../types/create-game-types";
 
-const socket = io(`${ServerConfig.getBackendUrl()}/games`);
-
-const retriableAxios = axios.create();
-rax.attach(retriableAxios);
-
-type RouteParamsProps = {
+interface CreateGameParams {
   game: string;
-};
+}
 
 const CreateGame = () => {
-  const { game } = useParams<RouteParamsProps>();
+  const { game } = useParams<CreateGameParams>();
 
   const [nickname, setNickname] = useState("");
   const history = useHistory();
 
-  const createGame = async (nickname: string) => {
-    const payload = {
+  const create = async (nickname: string) => {
+    const payload: CreateGamePayload = {
       nickname: nickname,
       game: game,
     };
 
-    retriableAxios
+    const response: any | CreateGameResponse = await axios
       .post(`${ServerConfig.getBackendUrl()}/create-game/`, payload)
-      .then(async (res) => {
-        // history.push(`/${game}/room-id`);
-        try {
-          socket.emit("joinGame", { playerId: "player1", roomId: "room1" });
-        } catch {
-          // retry connection
-        }
+      .then((result) => {
+        return result.data;
       })
       .catch((error) => {
+        // do something with the error
         console.log(error);
       });
+
+    return response;
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    createGame(nickname);
+    const response = await create(nickname);
+    history.push(`/games/${response.roomId}`);
   };
 
   return (
