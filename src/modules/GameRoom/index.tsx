@@ -1,6 +1,6 @@
 import React from "react";
 import io from "socket.io-client";
-import ServerConfig from "../../config/server.config";
+import ServerConfig from "src/config/server.config";
 import { useParams } from "react-router-dom";
 
 const socket = io(`${ServerConfig.getBackendUrl()}/game`);

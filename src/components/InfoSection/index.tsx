@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, ArrowForward, ArrowRight } from "../ButtonElement";
+import { Button, ArrowForward, ArrowRight } from "src/components/ButtonElement";
 import {
   InfoContainer,
   InfoWrapper,

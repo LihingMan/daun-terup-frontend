@@ -9,7 +9,7 @@ import {
   GameSectionP,
 } from "./GameSectionElements";
 import { Link } from "react-router-dom";
-import { GameTypes } from "../../types/game-types";
+import { GameTypes } from "src/types/game-types";
 
 const GameSection = () => {
   return (

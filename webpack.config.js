@@ -9,6 +9,11 @@ module.exports = {
     publicPath: "/",
   },
   resolve: {
+    alias: {
+      src: path.resolve(__dirname, "src"),
+      styles: path.resolve(__dirname, "styles"),
+      assets: path.resolve(__dirname, "assets"),
+    },
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
   },
   devServer: {

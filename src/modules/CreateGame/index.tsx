@@ -13,11 +13,11 @@ import {
   FormInput,
 } from "./CreateGameElements";
 import axios from "axios";
-import ServerConfig from "../../config/server.config";
+import ServerConfig from "src/config/server.config";
 import {
   CreateGamePayload,
   CreateGameResponse,
-} from "../../types/create-game-types";
+} from "src/types/create-game-types";
 
 interface CreateGameParams {
   game: string;

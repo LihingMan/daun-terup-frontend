@@ -8,8 +8,8 @@ import {
   HeroP,
   HeroBtnWrapper,
 } from "./HeroElements";
-import Image from "../../../assets/landing/cards2.jpg";
-import { Button, ArrowForward, ArrowRight } from "../ButtonElement";
+import Image from "assets/landing/cards2.jpg";
+import { Button, ArrowForward, ArrowRight } from "src/components/ButtonElement";
 
 const Hero: React.FC = () => {
   const [hover, setHover] = useState(false);
