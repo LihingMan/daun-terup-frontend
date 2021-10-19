@@ -18,6 +18,8 @@ import {
   CreateGamePayload,
   CreateGameResponse,
 } from "src/types/create-game-types";
+import { addUserId } from "src/redux/actions";
+import { useDispatch } from "react-redux";
 
 interface CreateGameParams {
   game: string;
@@ -25,7 +27,7 @@ interface CreateGameParams {
 
 const CreateGame = () => {
   const { game } = useParams<CreateGameParams>();
-
+  const dispatch = useDispatch();
   const [nickname, setNickname] = useState("");
   const history = useHistory();
 
@@ -51,6 +53,7 @@ const CreateGame = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     const response = await create(nickname);
+    dispatch(addUserId(response.userId));
     history.push(`/games/${response.roomId}`);
   };
 

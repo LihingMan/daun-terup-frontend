@@ -7,16 +7,19 @@ import CreateGame from "./modules/CreateGame";
 import GlobalStyles from "styles/globalStyles";
 import GameRoom from "./modules/GameRoom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
+import allReducers from "./redux/reducers";
 
-const reduxStore = createStore(() => ({
-  birds: [
-    {
-      name: "robin",
-      views: 1,
-    },
-  ],
-}));
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION__?: typeof compose;
+  }
+}
+
+const reduxStore = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const App = () => {
   return (
