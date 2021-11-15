@@ -25,9 +25,9 @@ const GameRoom = () => {
   const connectToRoom = (roomId: string) => {
     try {
       // TODO:
-      // 1. need to return playerId in create-game api
-      // 2. need to try use redux to store the playerId
-      // 3. retrieve playerId from redux store here and connect to websocket
+      // 1. if userId retrieved from redux store is null, then make the user create a nickname and join the game
+      // 2. connect to the backend to create a user
+      // 3. with the userId returned, join the user to the websocket
       socket.emit("joinGame", { playerId: userId, roomId: roomId });
     } catch (error) {
       console.log(error);
